@@ -1,0 +1,33 @@
+<h1>Nav Calc v0.1</h1> 
+<div class="display" class="display-box">
+    {{ display }}
+</div>
+<table class="keyboard">
+    <tr>
+        <td colspan="2" class="specialwide" (click)="doClear()"><a>C</a></td>
+        <td colspan="2" class="specialwide" (click)="doDegree()">&deg;</td>
+    </tr>
+    <tr>
+        <td class="number" (click)="doNumber(7)">7</td>
+        <td class="number" (click)="doNumber(8)">8</td>
+        <td class="number" (click)="doNumber(9)">9</td>
+        <td class="action" (click)="doMinus()">-</td>
+    </tr>
+    <tr>
+        <td class="number" (click)="doNumber(4)">4</td>
+        <td class="number" (click)="doNumber(5)">5</td>
+        <td class="number" (click)="doNumber(6)">6</td>
+        <td class="action" (click)="doPlus()">+</td>
+    </tr>
+    <tr>
+        <td class="number" (click)="doNumber(1)">1</td>
+        <td class="number" (click)="doNumber(2)">2</td>
+        <td class="number" (click)="doNumber(3)">3</td>
+        <td rowspan="2" class="actionhigh" (click)="doEquals()">=</td>
+    </tr>
+    <tr>
+        <td colspan="2" class="numberwide" (click)="doNumber(0)">0</td>
+        <td class="number" (click)="doPeriod()">.</td>
+    </tr>
+</table>
+

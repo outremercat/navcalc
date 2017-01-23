@@ -1,0 +1,99 @@
+.display-box {
+  width: 326px;
+  height: 40px;
+  border: 1px solid gray;
+  padding: 5px;
+  background-color: white;
+  font-size: 2em;    
+  border-radius: 5px;
+  text-align: right;
+
+}
+
+.action {
+    background-color: #ffad33;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    width: 80px;
+    height: 80px;
+    font-size: 2em;
+}
+
+.actionhigh {
+    background-color: #ffad33;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    width: 80px;
+    height: 160px;
+    font-size: 2em;
+}
+.number {
+    background-color: #e8e8e8;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    width: 80px;
+    height: 80px;
+    font-size: 2em;
+}
+.numberwide {
+    background-color: #e8e8e8;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    width: 166px;
+    height: 80px;
+    font-size: 2em;
+}
+.special {
+    background-color: #d2d2d2;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    width: 80px;
+    height: 80px;
+    font-size: 2em;
+}
+.specialwide {
+    background-color: #d2d2d2;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    width: 166px;
+    height: 80px;
+    font-size: 2em;
+}
+
+.keyboard {
+    border: none;
+    border-spacing: 3px;
+    border-collapse: separate;
+}
+th, td {
+    padding: 0px;
+}
+
+td:active {
+    background-color: gray; 
+}
+h1 {
+    font-size: 12pt;
+}
+
+body {
+    background-color: black;
+}

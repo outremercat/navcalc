@@ -136,6 +136,8 @@ export class AppComponent  {
         if (this.stackDegrees < 0) {
             this.stackDegrees += 360;
         }
+        // round to 2 decimals (this is needed because of Javascripts weird floating point representation)
+        this.stackMinutes = +this.stackMinutes.toFixed(3);
 
     }
 

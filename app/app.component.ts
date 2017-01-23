@@ -33,13 +33,11 @@ export class AppComponent  {
     }
 
     doNumber(num: number) : void {
-        // check length
-        if (!this.inputLengthOk()) {
-            return;
-        }
         // deal with 0 and when the previous input was an operation
         if (this.display == "0" || this.lastInput != "number") {
             this.display = String(num);
+        } else if (!this.inputLengthOk()) {   // check length
+            return;
         } else {
             // add the digit
             this.display += num;

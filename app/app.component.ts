@@ -63,6 +63,10 @@ export class AppComponent  {
     }
 
     parseDisplay() : void {
+        // remove trailing "'" if any
+        if (this.display.includes("'")) {
+            this.display = this.display.slice(0, -1);
+        }
         // check if degrees sign there
         if (this.display.includes(this.degreeSign)) {
             //  split at degree sign
@@ -78,13 +82,23 @@ export class AppComponent  {
     }
 
     doDegree() : void {
+        let minutes: string = "";
+        let degrees : number;
         // check input
         // if the degree sign is already on the display, don't do anything
         if (this.display.includes(this.degreeSign)) {
             return;
         } 
 
-        let degrees: number = +this.display;
+        // check for period
+        if (this.display.includes(".")) {
+            // convert to minutes
+            minutes = (((+this.display) % 1) * 60).toFixed(0);
+            // split degress
+            degrees = +(this.display.split('.')[0]);
+        } else {
+            degrees = +this.display; 
+        }
 
         // if degrees > 360 take the modulo
         if (degrees > 360) {
@@ -92,7 +106,11 @@ export class AppComponent  {
         }
 
         this.display = String(degrees);
-        this.display += (this.degreeSign + " ");
+        if(minutes != "") {
+            this.display += (this.degreeSign + " " + minutes + "'");
+        } else {
+            this.display += (this.degreeSign + " ");
+        }
     }
 
 

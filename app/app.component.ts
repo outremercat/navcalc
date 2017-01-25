@@ -14,8 +14,8 @@ export class AppComponent  {
     inputMinutes = 0;
     stackDegrees = 0;
     stackMinutes = 0;
-    lastInput = "";
-    lastOperation = "";
+    lastInput = "plus";
+    lastOperation = "plus";
 
     degreeSign = String.fromCharCode(176);
 
@@ -24,8 +24,8 @@ export class AppComponent  {
         this.display = "0";
         this.stackDegrees = 0;
         this.stackMinutes = 0;
-        this.lastInput = "";
-        this.lastOperation = "";
+        this.lastInput = "plus";
+        this.lastOperation = "plus";
     }
 
     inputLengthOk() : boolean {
@@ -169,13 +169,18 @@ export class AppComponent  {
         if (this.lastInput == "number") {
             // get input
             this.parseDisplay();
-
-            // update stack
-            this.stackDegrees += this.inputDegrees;
-            this.stackMinutes += this.inputMinutes; 
-            this.inputDegrees = 0;
-            this.inputMinutes = 0;    
-
+           if (this.lastOperation == "minus") {
+                // update stack
+                this.stackDegrees -= this.inputDegrees;
+                this.stackMinutes -= this.inputMinutes; 
+                this.inputDegrees = 0;
+                this.inputMinutes = 0;    
+            } else if (this.lastOperation == "plus") {
+                this.stackDegrees += this.inputDegrees;
+                this.stackMinutes += this.inputMinutes;
+                this.inputDegrees = 0;
+                this.inputMinutes = 0; 
+            } 
             this.checkStack();
             this.updateDisplay();
         }
@@ -194,9 +199,11 @@ export class AppComponent  {
                 this.stackMinutes -= this.inputMinutes; 
                 this.inputDegrees = 0;
                 this.inputMinutes = 0;    
-            } else {
-                this.stackDegrees = this.inputDegrees;
-                this.stackMinutes = this.inputMinutes;
+            } else if (this.lastOperation == "plus") {
+                this.stackDegrees += this.inputDegrees;
+                this.stackMinutes += this.inputMinutes;
+                this.inputDegrees = 0;
+                this.inputMinutes = 0; 
             }
             this.checkStack();
             this.updateDisplay();
